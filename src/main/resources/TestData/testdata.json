@@ -3,12 +3,7 @@
     "data": [
       {
         "userType": "login user",
-        "emailAddress": "test@test.com",
-        "password": "Test@123",
-        "firstName": "test",
-        "lastName": "test",
-        "emailAddress1": "",
-        "contactNumber": "07123456789"
+        "emailAddress": "test@test.com"
       }
     ]
   }
