@@ -8,7 +8,7 @@ spockReports {
     set 'com.athaydes.spockframework.report.outputDir': "target/Reports/${folderName}"
     set 'com.athaydes.spockframework.report.IReportCreator': 'com.athaydes.spockframework.report.template.TemplateReportCreator'
     set 'com.athaydes.spockframework.report.showCodeBlocks': true
-    set 'com.athaydes.spockframework.report.projectName': 'Test             -POC'
+    set 'com.athaydes.spockframework.report.projectName': 'Test-POC'
     set 'com.athaydes.spockframework.report.projectVersion': 'POC-1.0'
     set 'com.athaydes.spockframework.report.template.TemplateReportCreator.specTemplateFile': '/templates/spec-template.html'
     set 'com.athaydes.spockframework.report.template.TemplateReportCreator.reportFileExtension': 'html'
