@@ -33,7 +33,7 @@ jobs:
           SELENIUM_HUB_HOST: 'localhost'
         run: mvn --batch-mode --update-snapshots clean install -Dgeb.env=prod -Dapp.browser=hub-chrome -Dapp.envName=prod -Dapp.platform=prod -DhubUrl=http://localhost:4444/wd/hub
 
-      - run: mkdir staging && cp target/Reports/* staging
+      - run: mkdir staging && cp target/Reports/*/*.html staging
       - uses: actions/upload-artifact@v2
         with:
             name: Package
