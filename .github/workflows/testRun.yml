@@ -16,7 +16,7 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    name: Run WDIO tests
+    name: Test Pilot
     steps:
       - name: Start Selenoid Server
         uses: Xotabu4/selenoid-github-action@v2

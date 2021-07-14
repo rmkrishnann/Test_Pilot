@@ -33,6 +33,7 @@ private static ChromeOptions getChromeOptions() {
     options.addArguments("disable-infobars")
     options.addArguments("allow-running-insecure-content")
     options.addArguments("disable-gpu")
+    options.addArguments("disable-dev-shm-usage")
     //options.setExperimentalOption("mobileEmulation", mobileEmulation)
     options.setAcceptInsecureCerts(true)
     options
