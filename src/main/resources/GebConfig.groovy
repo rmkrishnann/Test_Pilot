@@ -34,6 +34,7 @@ private static ChromeOptions getChromeOptions() {
     options.addArguments("allow-running-insecure-content")
     options.addArguments("disable-gpu")
     options.addArguments("disable-dev-shm-usage")
+    options.addArguments("remote-debugging-port=9222")
     //options.setExperimentalOption("mobileEmulation", mobileEmulation)
     options.setAcceptInsecureCerts(true)
     options
