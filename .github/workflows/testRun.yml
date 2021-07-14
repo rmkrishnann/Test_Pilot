@@ -20,10 +20,6 @@ jobs:
     steps:
       - name: Start Selenoid Server
         uses: Xotabu4/selenoid-github-action@v2
-        with:
-          selenoid-start-arguments: |
-            --args "-timeout 60s"
-            --browsers 'chrome' --last-versions 1
       - uses: actions/checkout@v1
 
       - name: Set up JDK 8
