@@ -31,4 +31,4 @@ jobs:
       - name: Run test
         env:
           SELENIUM_HUB_HOST: 'localhost'
-        run: mvn --batch-mode --update-snapshots clean install -Dgeb.env=prod -Dapp.browser=chrome -Dapp.envName=prod -Dapp.platform=prod -DhubUrl=http://localhost:4444/wd/hub
+        run: mvn --batch-mode --update-snapshots clean install -Dgeb.env=prod -Dapp.browser=hub-chrome -Dapp.envName=prod -Dapp.platform=prod -DhubUrl=http://localhost:4444/wd/hub
