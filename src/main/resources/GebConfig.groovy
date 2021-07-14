@@ -29,11 +29,11 @@ atCheckWaiting = true
 
 private static ChromeOptions getChromeOptions() {
     def options = new ChromeOptions()
-    def mobileEmulation = [deviceName: "iPhone X"]
+    //def mobileEmulation = [deviceName: "iPhone X"]
     options.addArguments("disable-infobars")
     options.addArguments("allow-running-insecure-content")
     options.addArguments("disable-gpu")
-    options.setExperimentalOption("mobileEmulation", mobileEmulation)
+    //options.setExperimentalOption("mobileEmulation", mobileEmulation)
     options.setAcceptInsecureCerts(true)
     options
 }
@@ -104,7 +104,7 @@ environments {
 
     }
     prod {
-        baseUrl = "https://google.co.uk"
+        baseUrl = ""
         System.setProperty("testDataFile", "src/main/resources/TestData/testdata.json")
 
     }
