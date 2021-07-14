@@ -9,7 +9,7 @@
 
     <properties>
         <skipTests>false</skipTests>
-        <testSet>Trails</testSet>
+        <testSet>trials</testSet>
         <testClassPattern>test/pilot/tests/${testSet}/**</testClassPattern>
         <javaVersion>1.8</javaVersion>
         <encoding>UTF-8</encoding>

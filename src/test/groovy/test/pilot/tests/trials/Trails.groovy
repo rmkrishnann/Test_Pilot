@@ -2,11 +2,14 @@ package test.pilot.tests.trials
 
 import spock.lang.Issue
 import spock.lang.Shared
+import test.pilot.pages.Homepage
 import test.pilot.tests.baseSpecs.baseSpec
+import test.pilot.pages.LoginPage
 
 class Trails extends baseSpec {
     @Shared
-            loginDetails = " user with invalid email"
+            email = "standard_user",
+            password = "secret_sauce"
 
     @Issue("Login1")
     def " Login Page Mandatory error validations"() {
@@ -18,14 +21,12 @@ class Trails extends baseSpec {
         when:
         ("I  click login without entering any credentials")
         at LoginPage
-        "Click Submit"()
+        "Login to Profile"(email, password)
 
         then:
-        ("I should see the error messages in the  login page")
-        at LoginPage
-        assert title == test.pilot.utils.PageTitle.LOGIN_PAGE_TITLE
-        assert msgEmailMandatory.text() == test.pilot.utils.Notifications.MANDATORY_EMAIL_MISSING
-        assert msgPasswordMandatory.text() == test.pilot.utils.Notifications.MANDATORY_PASSWORD_MISSING
+        ("I should see swag labs homepage")
+        at Homepage
+        assert title == test.pilot.utils.PageTitle.HOME_PAGE_TITLE
     }
 
 

@@ -4,10 +4,10 @@ import geb.Page
 import test.pilot.Modules.NotificationModule
 
 
-class LoginPage extends Page {
+class Homepage extends Page {
 
 
-    static url = "https://www.saucedemo.com/"
+    static url = "https://www.saucedemo.com/inventory.html"
 
     static at = {
         title == "Swag Labs"
@@ -22,6 +22,8 @@ class LoginPage extends Page {
         loginButton(wait: true) { $("#login-button") }
         loginForm { module test.pilot.Modules.LoginModule }
         notification { module NotificationModule }
+        basket (wait: true) {$("#shopping_cart_container > a")}
+        title1 (wait: true) {$("head > title")}
     }
 
     def "loginToId"(userType) {
@@ -47,6 +49,7 @@ class LoginPage extends Page {
         passwordField.value(password)
         assert passwordField.value() == password
         loginButton.click()
+        assert loginButton.click()
     }
 
 }
