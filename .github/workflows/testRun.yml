@@ -1,4 +1,4 @@
-name: "Single ID Automation tests run"
+name: " Automation tests run"
 on:
   workflow_dispatch:
     inputs:
@@ -6,7 +6,7 @@ on:
       branch:
         description: 'Branch Name'
         required: true
-        default: 'sid-view-profile'
+        default: 'test'
       browser:
         description: 'Browser'
         required: true
