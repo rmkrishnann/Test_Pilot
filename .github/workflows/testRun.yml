@@ -18,9 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Pilot
     steps:
-      - name: Start Selenoid Server
-        uses: Xotabu4/selenoid-github-action@v2
-      - uses: actions/checkout@v1
+      - name: Checkout Code
+        uses: actions/checkout@v1
 
       - name: Set up JDK 8
         uses: actions/setup-java@v2
@@ -29,11 +28,10 @@ jobs:
             distribution: 'adopt'
 
       - name: Run test
-        env:
-          SELENIUM_HUB_HOST: 'localhost'
-        run: mvn --batch-mode --update-snapshots clean install -Dgeb.env=prod -Dapp.browser=hub-chrome -Dapp.envName=prod -Dapp.platform=prod -DhubUrl=http://localhost:4444/wd/hub
+        run: mvn --batch-mode --update-snapshots clean install -Dgeb.env=prod -Dapp.browser=hub-chrome -Dapp.envName=prod -Dapp.platform=prod -DhubUrl=http://3.9.178.223:4444/wd/hub/
 
       - uses: actions/upload-artifact@v2
         with:
           name: Report
           path:  /home/runner/work/Test_Pilot/Test_Pilot/target/Reports
+          retention-days: 5
