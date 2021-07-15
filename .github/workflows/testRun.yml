@@ -61,7 +61,7 @@ jobs:
           #  username: ${{ secrets.JIRA_USERNAME }}
           # password: ${{ secrets.JIRA_PASSWORD }}
           #xrayCloud: "false"
-          #xrayBaseUrl: "https://jira.intdigital.ee.co.uk/"
+          #xrayBaseUrl: ""
           #testFormat: "junit"
           #testPaths: "**/target/cucumber.json"
           #testExecKey: ${{ github.event.inputs.testExecution}}
