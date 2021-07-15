@@ -29,7 +29,7 @@ jobs:
 
       - name: Run test
         run: mvn --batch-mode --update-snapshots clean install -Dgeb.env=prod -Dapp.browser=hub-chrome -Dapp.envName=prod -Dapp.platform=prod -DhubUrl=http://3.9.178.223:4444/wd/hub/
-
+        if: ${{ always() }}
       - uses: actions/upload-artifact@v2
         with:
           name: Report
