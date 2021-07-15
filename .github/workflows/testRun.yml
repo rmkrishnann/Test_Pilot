@@ -9,7 +9,19 @@ on:
     branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
+
   workflow_dispatch:
+      inputs:
+        browser:
+          description: 'Browser'
+          required: true
+          default: 'hub-chrome'
+        tags:
+          description: 'Test scenario tags'
+        grid:
+          description: 'Grid Url'
+          required: true
+          default: 'http://3.9.178.223:4444/wd/hub/'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 
@@ -28,7 +40,7 @@ jobs:
             distribution: 'adopt'
 
       - name: Run test
-        run: mvn --batch-mode --update-snapshots clean install -Dgeb.env=prod -Dapp.browser=hub-chrome -Dapp.envName=prod -Dapp.platform=prod -DhubUrl=http://3.9.178.223:4444/wd/hub/
+        run: mvn --batch-mode --update-snapshots clean install -Dgeb.env=prod -Dapp.browser=${{ github.event.inputs.browser }}! -Dapp.envName=prod -Dapp.platform=prod -DhubUrl=${{ github.event.inputs.grid }}!
         if: ${{ always() }}
       - uses: actions/upload-artifact@v2
         with:
