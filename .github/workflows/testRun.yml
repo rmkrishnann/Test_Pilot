@@ -22,7 +22,7 @@ on:
       grid:
         description: 'Grid Url'
         required: true
-        default: 'http://3.9.178.223:4444/wd/hub/'
+        default: ''
 
       testExecution:
         description: 'Xray test execution ID'
