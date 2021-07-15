@@ -18,7 +18,7 @@ class LoginPage extends Page {
 
         headerTitle(wait: true) { $("head > title") }
         emailField(wait: true) { $("#user-name") }
-        passwordField(wait: true) { $("#password") }
+        passwordField(wait: true) { $("#pasdfssword") }
         loginButton(wait: true) { $("#login-button") }
         loginForm { module test.pilot.Modules.LoginModule }
         notification { module NotificationModule }
