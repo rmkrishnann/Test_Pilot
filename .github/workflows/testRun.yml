@@ -17,6 +17,7 @@ on:
           required: true
           default: 'hub-chrome'
         tags:
+          required: false
           description: 'Test scenario tags'
         grid:
           description: 'Grid Url'
@@ -38,10 +39,15 @@ jobs:
         with:
             java-version: '8'
             distribution: 'adopt'
+      - name : Print inputs
+        run: |
+         echo "browser :  ${{ github.event.inputs.browser }}"
+         echo "grid :  ${{ github.event.inputs.grid }}"
 
       - name: Run test
-        run: mvn --batch-mode --update-snapshots clean install -Dgeb.env=prod -Dapp.browser=${{ github.event.inputs.browser }}! -Dapp.envName=prod -Dapp.platform=prod -DhubUrl=${{ github.event.inputs.grid }}!
-        if: ${{ always() }}
+
+        run: mvn --batch-mode --update-snapshots clean install -Dgeb.env=prod -Dapp.browser=${{ github.event.inputs.browser }} -Dapp.envName=prod -Dapp.platform=prod -DhubUrl=${{ github.event.inputs.grid }}
+        if: always()
       - uses: actions/upload-artifact@v2
         with:
           name: Report
